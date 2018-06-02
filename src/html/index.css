@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+:root {
+    font-family: 'Nunito Sans', Arial;
+}
+body {
+    max-width: 960px;
+    margin: auto;
+    background-color:rgb(238, 239, 247)
+}
+.product-card {
+    padding: 5px;
+  }
+  
+  
+  .product-card img {
+    width: 100%;
+  }
+  
+  .product-card div {
+    display: flex;
+    justify-content: space-between;
+}
+  
+  .btn-remove {
+    background-color:#101b7e;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 2%;
+}
+  
+.btn-remove:hover {
+    background:#926262; 
+    color: black;
+    transition: 0.5 ease-in-out;
+  }
+  .add-album {
+        background-color: rgb(91, 73, 196);
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 10px 24px;
+  }
+  
+  
+  @media (min-width: 400px) {
+      .products-list {
+          display: grid;
+          grid-column-gap: 5px;
+          grid-row-gap: 5px;
+          grid-template-columns: 1fr 1fr;
+      }
+  }
+  
+  @media (min-width: 700px) {
+      .products-list {
+          grid-template-columns: repeat(3, 1fr);
+      }
+  }
+  
+  @media (min-width: 900px) {
+      .products-list {
+          grid-template-columns: repeat(4, 1fr);
+      }
+  }
+
+.modal .form {
+ width: 70%;
+ margin: auto;
+}
+.modal {
+width: 60%;
+margin: auto;
+font-family: 'Titillium Web', sans-serif;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+.modal.close-btn {
+width: 100%;
+margin: auto;
+font-family: 'Titillium Web', sans-serif;
+}
+.modal .close-btn  > span {
+font-family: 'Permanent Marker', cursive;
+}
+.modal .close-btn img {
+width: 25px;
+height: 25px;
+float: right;
+}
+
+input[type=text], input[type=number], select {
+width: 100%;
+padding: 8px 15px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.btn-form {
+width: 100%;
+background-color: rgb(91, 73, 196);
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.btn-form:hover {
+background-color: #5261a5;
+}
+  
+  
+
+  .modal-bg.ng-enter,
+  .modal-bg.ng-leave,
+  .modal.ng-enter,
+.modal.ng-leave {
+  transition: opacity ease-in-out 1s;
+}
+
+.modal-bg.ng-enter,
+.modal-bg.ng-leave.ng-leave-active,
+.modal.ng-enter,
+.modal.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.modal-bg.ng-leave,
+.modal-bg.ng-enter.ng-enter-active,
+.modal.ng-leave,
+.modal.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.modal-bg {
+    position: fixed;
+    background-color:rgba(0, 0, 0, 0.479);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10px;
+}
+.image {
+    width: 100%;
+    height: 140px;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+}
+
+.btn-remove-adit > button {
+    background-color: black
+}
+

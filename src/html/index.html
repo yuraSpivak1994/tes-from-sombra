@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Library</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body ng-controller="appController as appCtrl">
+
+    <header>
+        <nav>
+            <h1>Welcome to music library</h1>
+        </nav>
+        <button type="button" ng-click="appCtrl.addAlbum()" class="add-album">Add new album</button>
+    </header>
+
+    <main>
+        <h2>Products</h2>
+        <div class="products-list" >
+            <article class="product-card" ng-repeat="album in appCtrl.albums">
+                <div class="image">
+                        <img ng-src="{{album.logoUrl ? album.logoUrl : './img/default.png'}}">
+                </div>
+                <h4>{{album.title}}</h4>
+                <p>artist: {{album.artist}}</p>
+                <p>country: {{album.country}}</p>
+                <p>company: {{album.company}}</p>
+                <p>price: {{album.price}}</p>
+                <p>year: {{album.year}}</p>
+                <div class="btn-remove-adit">
+                    <button class="btn-remove"ng-click="appCtrl.removeAlbum(album.id)">remove</button>
+                    <button class="btn-remove"ng-click="appCtrl.editAlbum(album)">edit</button>
+                </div>
+            </article>
+            
+        </div>
+    </main>
+
+
+    
+    <div class="modal-bg" ng-if="appCtrl.showModal">
+        <div class="modal" ng-if="appCtrl.showModal">
+            <div class="form">
+            <div class="close-btn">
+                    <div class="close-btn">
+                          <span>Add mew album</span> 
+                          <img src="close-btn.png" alt="close" ng-click="appCtrl.closeDialog()">
+                        </div>
+                        <label for="title">
+                            <span class="title"> Title:  </span>
+                            <input id="title" type="text" ng-model="appCtrl.albumEntety.title">
+                        </label>
+                        <label for="artist">
+                            <span>Artist:</span>
+                            <input id="artist" type="text" ng-model="appCtrl.albumEntety.artist">
+                        </label>
+                        <label for="country">
+                            <span>Country</span>
+                            <input id="country" type="text" ng-model="appCtrl.albumEntety.country">
+                        </label>
+                        <label for="company">
+                            <span>Company:</span>
+                            <input id="company" type="text" ng-model="appCtrl.albumEntety.company">
+                        </label>
+                        <label for="price">
+                            <span>Price:</span>
+                            <input id="price" type="number" ng-model="appCtrl.albumEntety.price">
+                        </label>
+                        <label for="year">
+                            <span>Year:</span>
+                            <input id="year" type="number" ng-model="appCtrl.albumEntety.year">
+                        </label>
+                        <label for="icon">
+                            <span>Logo url:</span>
+                            <input id="icon" type="text" ng-model="appCtrl.albumEntety.logoUrl">
+                        </label>
+                        <button type="button" ng-click="appCtrl.saveChanges()" class="btn-form">Save</button> 
+                   </div>    
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    
+    <script src="main.js"></script>
+    <script src="app.controller.js"></script>
+    <script src="app.service.js"></script>
+    
+</body>
+</html>
